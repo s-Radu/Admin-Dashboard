@@ -568,18 +568,6 @@ video {
   }
 }
 
-.visible {
-  visibility: visible;
-}
-
-.collapse {
-  visibility: collapse;
-}
-
-.relative {
-  position: relative;
-}
-
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
@@ -608,10 +596,6 @@ video {
   margin: 0.5rem;
 }
 
-.m-3 {
-  margin: 0.75rem;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -621,72 +605,24 @@ video {
   margin-top: 0.5rem;
 }
 
-.block {
-  display: block;
-}
-
-.table {
-  display: table;
-}
-
 .grid {
   display: grid;
-}
-
-.contents {
-  display: contents;
-}
-
-.hidden {
-  display: none;
-}
-
-.h-full {
-  height: 100%;
-}
-
-.h-4 {
-  height: 1rem;
-}
-
-.h-10 {
-  height: 2.5rem;
-}
-
-.h-40 {
-  height: 10rem;
 }
 
 .h-12 {
   height: 3rem;
 }
 
-.w-10 {
-  width: 2.5rem;
+.h-full {
+  height: 100%;
 }
 
 .w-12 {
   width: 3rem;
 }
 
-.border-collapse {
-  border-collapse: collapse;
-}
-
-.transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .cursor-pointer {
   cursor: pointer;
-}
-
-.resize {
-  resize: both;
-}
-
-.snap-center {
-  scroll-snap-align: center;
 }
 
 .grid-cols-2 {
@@ -701,20 +637,8 @@ video {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.place-content-center {
-  place-content: center;
-}
-
 .content-center {
   align-content: center;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.justify-center {
-  justify-content: center;
 }
 
 .justify-items-center {
@@ -741,20 +665,12 @@ video {
   border-width: 2px;
 }
 
-.border {
-  border-width: 1px;
-}
-
 .bg-center {
   background-position: center;
 }
 
 .p-2 {
   padding: 0.5rem;
-}
-
-.indent-1 {
-  text-indent: 0.25rem;
 }
 
 .indent-2 {
@@ -775,27 +691,14 @@ video {
   line-height: 2.5rem;
 }
 
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
-}
-
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.underline {
-  text-decoration-line: underline;
-}
-
-.outline {
-  outline-style: solid;
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .active\:ring-purple-500:active {
