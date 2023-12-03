@@ -26,25 +26,26 @@
 
 <body class="dark:bg-gray-800 text-white h-screen" id="main">
     <!--! container -->
-    <div class="container mx-auto rounded-2xl  grid grid-cols-4 gap-4 h-full mt-2">
+    <div class="container mx-auto rounded-2xl grid grid-cols-4 gap-4 h-full mt-2">
 
         <!--! Nav bar -->
-        <nav class="col-start-1 col-span-1 row-span-full border-2 rounded-2xl bg-blue-500">
+        <nav class="row-span-3 rounded-2xl bg-blue-500">
             <h1 class="text-4xl text-center m-5 font-josefin font-black">
                 <i class="fa-solid fa-grip rotate-90"></i>
                 Dashboard
             </h1>
-            <ul class="grid grid-cols-1 w-3/4 border-2 mx-auto">
+            <ul class="grid grid-cols-1 w-3/4 border-2 mx-auto h-5/6">
                 <li>title1</li>
                 <li>title2</li>
+                <li></li>
                 <li>title3</li>
             </ul>
         </nav>
 
         <!--! Header -->
-        <header class="col-start-2 col-span-3 ">
+        <header class="col-start-2 grid-rows-2 col-span-3 grid items-start h-2/4 border-b">
             <div class="grid grid-cols-2 m-2 content-center">
-                <form class="">
+                <form>
                     <label for="text" id="search">
                         <i class="fa-solid fa-magnifying-glass cursor-pointer text-2xl m-2"></i>
                     </label>
@@ -53,18 +54,21 @@
                         id="text">
                 </form>
                 <div class="grid grid-cols-3 justify-items-center content-center">
-                    <div class="">
+                    <div>
                         <i class="fa-regular fa-bell-slash cursor-pointer text-4xl" id="notifications"></i>
                     </div>
                     <div class="rounded-full overflow-hidden h-12 w-12">
                         <img src="./imgs//logo.png" alt="Page logo?" class=" bg-center">
                     </div>
-                    <div class="">
+                    <div>
                         <a href="#main">
                             <h1 class="text-2xl font-josefin cursor-pointer">lil void</h1>
                         </a>
                     </div>
                 </div>
+            </div>
+            <div class="grkd grid-cols-2 m-2 content-center">
+                some random text cuz i wanna see
             </div>
         </header>
 

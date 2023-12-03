@@ -588,16 +588,24 @@ video {
   grid-column-start: 2;
 }
 
-.row-span-full {
-  grid-row: 1 / -1;
+.col-end-1 {
+  grid-column-end: 1;
+}
+
+.col-end-2 {
+  grid-column-end: 2;
+}
+
+.row-span-2 {
+  grid-row: span 2 / span 2;
+}
+
+.row-span-3 {
+  grid-row: span 3 / span 3;
 }
 
 .m-2 {
   margin: 0.5rem;
-}
-
-.m-4 {
-  margin: 1rem;
 }
 
 .m-5 {
@@ -613,10 +621,6 @@ video {
   margin-top: 0.5rem;
 }
 
-.mr-2 {
-  margin-right: 0.5rem;
-}
-
 .grid {
   display: grid;
 }
@@ -629,52 +633,36 @@ video {
   height: 100%;
 }
 
-.h-1 {
-  height: 0.25rem;
-}
-
 .h-screen {
   height: 100vh;
 }
 
-.w-12 {
-  width: 3rem;
+.h-1\/4 {
+  height: 25%;
 }
 
-.w-10 {
-  width: 2.5rem;
+.h-2\/4 {
+  height: 50%;
 }
 
-.w-2\/3 {
-  width: 66.666667%;
+.h-4\/6 {
+  height: 66.666667%;
 }
 
-.w-3\/4 {
-  width: 75%;
-}
-
-.w-full {
-  width: 100%;
-}
-
-.w-11\/12 {
-  width: 91.666667%;
-}
-
-.w-11 {
-  width: 2.75rem;
+.h-5\/6 {
+  height: 83.333333%;
 }
 
 .w-10\/12 {
   width: 83.333333%;
 }
 
-.w-2\/4 {
-  width: 50%;
+.w-12 {
+  width: 3rem;
 }
 
-.max-w-screen-2xl {
-  max-width: 1536px;
+.w-3\/4 {
+  width: 75%;
 }
 
 .rotate-90 {
@@ -684,6 +672,10 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .grid-cols-2 {
@@ -698,12 +690,20 @@ video {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.grid-cols-1 {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+.grid-rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
 .content-center {
   align-content: center;
+}
+
+.content-start {
+  align-content: flex-start;
+}
+
+.items-start {
+  align-items: flex-start;
 }
 
 .justify-items-center {
@@ -714,8 +714,8 @@ video {
   gap: 1rem;
 }
 
-.gap-2 {
-  gap: 0.5rem;
+.self-start {
+  align-self: flex-start;
 }
 
 .overflow-hidden {
@@ -730,13 +730,12 @@ video {
   border-radius: 9999px;
 }
 
-.rounded-r-2xl {
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-}
-
 .border-2 {
   border-width: 2px;
+}
+
+.border-b {
+  border-bottom-width: 1px;
 }
 
 .bg-blue-500 {
@@ -772,15 +771,6 @@ video {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
-}
-
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
-}
-
-.font-bold {
-  font-weight: 700;
 }
 
 .font-black {
