@@ -1,18 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class=" dark">
 
 <head>
+    <meta name="description" content="An admin dashboard built in the learning trail for the Odin project by lil void">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Script, tailwindm logo  -->
     <link rel="stylesheet" href="./src/output.css">
     <script src="./src//app.js"></script>
+    <link rel="shortcut icon" href="./imgs/page-logo.png" type="image/x-icon">
+    <!-- Font awesome icnons -->
+    <script src="https://kit.fontawesome.com/5b3d64bf20.js" crossorigin="anonymous" defer></script>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300&family=Montserrat:wght@100;200;300&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400&display=swap"
+        rel="stylesheet">
+
     <title>Admin Sashboard</title>
 </head>
 
-<body>
-    <h1 class="text-3xl font-bold underline">
-        Hello world!
-    </h1>
+<body class="dark:bg-gray-800 text-white" id="body">
+    <!--! container -->
+    <div class="container mx-auto rounded-2xl border-2 grid grid-cols-4 gap-4 h-full mt-2">
+
+        <!--! Nav bar -->
+        <nav class="col-start-1 col-span-1 row-span-full">
+            <h1>nav title</h1>
+            <ul>
+                <li>title1</li>
+                <li>title2</li>
+                <li>title3</li>
+            </ul>
+        </nav>
+
+        <!--! Header -->
+        <header class="col-start-2 col-span-3 ">
+            <div class="grid grid-cols-2 m-2 content-center">
+                <form class="">
+                    <i class="fa-solid fa-magnifying-glass cursor-pointer text-2xl"></i>
+                    <input type="text"
+                        class="m-2 p-2 rounded-2xl font-josefin text-black indent-2 text-2xl active::ring-2 active:ring-purple-500">
+                </form>
+                <div class="grid grid-cols-3 justify-items-center content-center">
+                    <div class="">
+                        <i class="fa-regular fa-bell cursor-pointer text-4xl"></i>
+                        <!--* to be used later -->
+                        <!-- <i class="fa-regular fa-bell-slash"></i> -->
+                    </div>
+                    <div class="rounded-full overflow-hidden h-12 w-12">
+                        <img src="./imgs//logo.png" alt="Page logo?" class=" bg-center">
+                    </div>
+                    <div class="">
+                        title
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
+        <!--! Main -->
+        <main class="col-start-2 col-span-2">
+            Main content
+        </main>
+
+        <!--! Aside -->
+        <aside class="">
+            <!--todo Aside item 1 -->
+            <div class="">
+                aside 1
+            </div>
+            <!--todo Aside item 2 -->
+            <div class="">
+                aside 2
+            </div>
+        </aside>
+
+    </div>
 
 </body>
 
