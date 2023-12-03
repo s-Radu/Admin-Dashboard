@@ -1,6 +1,8 @@
 //* variabiles
 
 const notifications = document.getElementById("notifications");
+const searchBtn = document.getElementById("search");
+const searchInput = document.getElementById("text");
 
 //> functions
 
@@ -16,6 +18,19 @@ function notificationsBell() {
   }
 }
 
+function search(e) {
+  console.log(searchInput.value);
+  searchInput.value = "";
+  e.preventDefault();
+}
+
 //< events
 
 notifications.addEventListener("click", notificationsBell);
+searchBtn.addEventListener("click", search);
+searchInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    search(e);
+  }
+});
