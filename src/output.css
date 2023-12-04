@@ -946,6 +946,10 @@ video {
   border-bottom-width: 2px;
 }
 
+.border-r-2 {
+  border-right-width: 2px;
+}
+
 .bg-blue-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
@@ -973,6 +977,18 @@ video {
   padding: 0.25rem;
 }
 
+.p-4 {
+  padding: 1rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
 .pl-2 {
   padding-left: 0.5rem;
 }
@@ -991,6 +1007,10 @@ video {
 
 .indent-2 {
   text-indent: 0.5rem;
+}
+
+.indent-4 {
+  text-indent: 1rem;
 }
 
 .font-josefin {
