@@ -26,6 +26,16 @@ function search(e) {
   e.preventDefault();
 }
 
+function likeAProjectAnimation(e) {
+  if (e.target.classList.contains("fa-regular")) {
+    e.target.classList.add("fa-solid");
+    e.target.classList.remove("fa-regular");
+  } else {
+    e.target.classList.add("fa-regular");
+    e.target.classList.remove("fa-solid");
+  }
+}
+
 //< events
 
 notifications.addEventListener("click", notificationsBell);
@@ -35,4 +45,8 @@ searchInput.addEventListener("keydown", (e) => {
     e.preventDefault();
     search(e);
   }
+});
+
+projectLike.forEach((project) => {
+  project.addEventListener("click", likeAProjectAnimation);
 });
