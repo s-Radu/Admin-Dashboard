@@ -3,6 +3,8 @@
 const notifications = document.getElementById("notifications");
 const searchBtn = document.getElementById("search");
 const searchInput = document.getElementById("text");
+const projectLike = document.querySelectorAll(".like");
+//> Woth with fa-solid and fa-regular
 
 //> functions
 
