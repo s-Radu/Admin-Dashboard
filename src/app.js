@@ -11,16 +11,27 @@ const projectWrapper = document.getElementById("project-wrapper");
 //> functions
 
 function newProjectFunction() {
+  //TODO add check for null imputs
+
   const title = prompt("What's the project title?");
   const description = prompt("The project description?");
+  if (
+    title === null ||
+    description === null ||
+    title === "" ||
+    description === ""
+  ) {
+    alert("No project has been added since the title or description is empty");
+    return;
+  }
 
-  const newProjectHTML = `<div class="rounded-2xl border-l-4 border-l-orange-400 bg-slate-600 flex flex-col justify-between">
+  const newProjectHTML = `<div class="project rounded-2xl border-l-4 border-l-orange-400 bg-slate-600 flex flex-col justify-between">
     <div>
-      <h2 class="font-montserat ml-2 text-4xl m-4">${title}</h2>
-      <p class="font-montserat ml-2 text-lg indent-2 m-4">${description}</p>
+      <h2 class="project-title font-montserat ml-2 text-4xl m-4">${title}</h2>
+      <p class="project-description font-montserat ml-2 text-lg indent-2 m-4">${description}</p>
     </div>
     <div class="grid-cols-1 grid place-items-end grid-flow-col gap-4 m-4">
-      <i class="fa-regular fa-star text-2xl like cursor-pointer"></i>
+      <i class=" fa-regular fa-star text-2xl like cursor-pointer"></i>
       <i class="fa-regular fa-eye text-2xl cursor-pointer"></i>
       <i class="fa-solid fa-code-fork text-2xl cursor-pointer"></i>
     </div>
@@ -40,15 +51,17 @@ function newProjectFunction() {
 window.onload = function () {
   let projects = localStorage.getItem("projects");
   projects = projects ? JSON.parse(projects) : [];
+  // Add the original projects to the projects array
 
   projects.forEach((project) => {
-    const newProjectHTML = `<div class="rounded-2xl border-l-4 border-l-orange-400 bg-slate-600 flex flex-col justify-between">
+    const likeClass = project.liked ? "fa-solid" : "fa-regular";
+    const newProjectHTML = `<div class="project rounded-2xl border-l-4 border-l-orange-400 bg-slate-600 flex flex-col justify-between">
     <div>
-      <h2 class="font-montserat ml-2 text-4xl m-4">${project.title}</h2>
-      <p class="font-montserat ml-2 text-lg indent-2 m-4">${project.description}</p>
+      <h2 class="project-title font-montserat ml-2 text-4xl m-4">${project.title}</h2>
+      <p class="project-description font-montserat ml-2 text-lg indent-2 m-4">${project.description}</p>
     </div>
     <div class="grid-cols-1 grid place-items-end grid-flow-col gap-4 m-4">
-      <i class="fa-regular fa-star text-2xl like cursor-pointer"></i>
+      <i class=" ${likeClass} fa-star text-2xl like cursor-pointer"></i>
       <i class="fa-regular fa-eye text-2xl cursor-pointer"></i>
       <i class="fa-solid fa-code-fork text-2xl cursor-pointer"></i>
     </div>
@@ -73,6 +86,7 @@ function shared() {
 }
 
 function notificationsBell() {
+  //todo resolve the conflict between two events
   if (notifications.classList.contains("fa-bell-slash")) {
     alert("notifications are on");
     notifications.classList.remove("fa-bell-slash");
@@ -137,5 +151,20 @@ newProject.addEventListener("click", newProjectFunction);
 projectWrapper.addEventListener("click", (e) => {
   if (e.target.classList.contains("like")) {
     likeAProjectAnimation(e);
+  }
+  // Get the project title
+  const title = e.target
+    .closest(".rounded-2xl")
+    .querySelector(".project-title").textContent;
+
+  // Update the liked status in localStorage
+  let projects = localStorage.getItem("projects");
+  projects = projects ? JSON.parse(projects) : [];
+  const project = projects.find((project) => project.title === title);
+  if (project) {
+    project.liked = !project.liked;
+    localStorage.setItem("projects", JSON.stringify(projects));
+  } else {
+    console.error(`No project found with title: ${title}`);
   }
 });
