@@ -4,9 +4,18 @@ const notifications = document.getElementById("notifications");
 const searchBtn = document.getElementById("search");
 const searchInput = document.getElementById("text");
 const projectLike = document.querySelectorAll(".like");
+const shareBtn = document.getElementById("btn-share");
+const sharedMessage = document.getElementById("shared-message");
 //> Woth with fa-solid and fa-regular
 
 //> functions
+
+function shared() {
+  sharedMessage.classList.toggle("active");
+  setTimeout(() => {
+    sharedMessage.classList.toggle("active");
+  }, 2000);
+}
 
 function notificationsBell() {
   if (notifications.classList.contains("fa-bell-slash")) {
@@ -67,3 +76,5 @@ searchInput.addEventListener("keydown", (e) => {
 projectLike.forEach((project) => {
   project.addEventListener("click", likeAProjectAnimation);
 });
+
+shareBtn.addEventListener("click", shared);

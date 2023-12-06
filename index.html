@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./src/output.css">
     <script src="./src//app.js" defer></script>
     <link rel="shortcut icon" href="./imgs/page-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="src/animation.css">
 
     <!-- Font awesome icnons -->
     <script src="https://kit.fontawesome.com/5b3d64bf20.js" crossorigin="anonymous" defer></script>
@@ -25,6 +26,10 @@
 </head>
 
 <body class="dark:bg-gray-800 text-white h-screen" id="main">
+    <!--! Share button animation -->
+    <div class="animate slide-in-down notification-button" id="shared-message">
+        <i class="fa fa-files-o"></i> Link Copied to Clipboard
+    </div>
     <!--! container -->
     <div class="container mx-auto rounded-2xl grid grid-cols-4 grid-rows-3 gap-8 h-full mt-2">
 
