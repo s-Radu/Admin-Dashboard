@@ -11,6 +11,7 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  purge: ["./index.html", "./src/app.js"],
 };
 
 //* ussage command for --watch mode : npx tailwindcss -i ./src/input.css -o ./src/output.css -w

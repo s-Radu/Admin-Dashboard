@@ -20,6 +20,20 @@ function notificationsBell() {
   }
 }
 
+function mouseEnter(e) {
+  if (e.target.classList.contains("fa-bell-slash")) {
+    e.target.classList.add("fa-bell");
+    e.target.classList.remove("fa-bell-slash");
+  }
+}
+
+function mouseLeave(e) {
+  if (e.target.classList.contains("fa-bell")) {
+    e.target.classList.add("fa-bell-slash");
+    e.target.classList.remove("fa-bell");
+  }
+}
+
 function search(e) {
   console.log(searchInput.value);
   searchInput.value = "";
@@ -39,6 +53,9 @@ function likeAProjectAnimation(e) {
 //< events
 
 notifications.addEventListener("click", notificationsBell);
+notifications.addEventListener("mouseenter", mouseEnter);
+notifications.addEventListener("mouseleave", mouseLeave);
+
 searchBtn.addEventListener("click", search);
 searchInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
