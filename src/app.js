@@ -11,10 +11,17 @@ const sharedMessage = document.getElementById("shared-message");
 //> functions
 
 function shared() {
-  sharedMessage.classList.toggle("active");
-  setTimeout(() => {
-    sharedMessage.classList.toggle("active");
-  }, 2000);
+  navigator.clipboard
+    .writeText(window.location.href)
+    .then(() => {
+      sharedMessage.classList.toggle("active");
+      setTimeout(() => {
+        sharedMessage.classList.toggle("active");
+      }, 2000);
+    })
+    .catch((err) => {
+      console.error("Failed to copy: ", err);
+    });
 }
 
 function notificationsBell() {
