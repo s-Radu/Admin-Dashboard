@@ -8,9 +8,11 @@
 .animate.active {
   opacity: 1;
   transform: translateX(-50%) translateY(-50%);
+  z-index: 2;
 }
 .slide-in-down {
   transform: translateY(-100%) translateX(-50%);
+  z-index: 2;
 }
 .notification-button {
   position: fixed;
@@ -20,7 +22,6 @@
   background: #343a40;
   color: #eeeeee;
   border-radius: 10px;
-  font-size: 14px;
-  font-weight: 800;
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.05);
+  z-index: -1;
 }
