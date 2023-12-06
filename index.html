@@ -36,33 +36,33 @@
             </h1>
             <ul class="grid grid-cols-1 w-3/4 mx-auto h-2/6 mt-8">
                 <li class="font-josefin text-3xl font-bold">
-                    <a href="#home">Home</a>
+                    <a href="#home" class="hover:text-black">Home</a>
                 </li>
                 <li class="font-josefin text-3xl font-bold">
-                    <a href="#profile">Profile</a>
+                    <a href="#profile" class="hover:text-black">Profile</a>
                 </li>
                 <li class="font-josefin text-3xl font-bold">
-                    <a href="#message">Message</a>
+                    <a href="#message" class="hover:text-black">Message</a>
                 </li>
                 <li class="font-josefin text-3xl font-bold">
-                    <a href="#history">History</a>
+                    <a href="#history" class="hover:text-black">History</a>
                 </li>
                 <li class="font-josefin text-3xl font-bold">
-                    <a href="#tasks">Tasks</a>
+                    <a href="#tasks" class="hover:text-black">Tasks</a>
                 </li>
                 <li class="font-josefin text-3xl font-bold">
-                    <a href="#communities">Communities</a>
+                    <a href="#communities" class="hover:text-black">Communities</a>
                 </li>
             </ul>
             <ul class="grid grid-cols-1 w-3/4 mx-auto h-1/6 mt-8">
                 <li class="font-josefin text-3xl font-bold">
-                    <a href="#settings">Settings</a>
+                    <a href="#settings" class="hover:text-black">Settings</a>
                 </li>
                 <li class="font-josefin text-3xl font-bold">
-                    <a href="#support">Support</a>
+                    <a href="#support" class="hover:text-black">Support</a>
                 </li>
                 <li class="font-josefin text-3xl font-bold">
-                    <a href="#privacy">Privacy</a>
+                    <a href="#privacy" class="hover:text-black">Privacy</a>
                 </li>
             </ul>
         </nav>
@@ -110,9 +110,13 @@
                     <button
                         class="bg-blue-400 rounded-2xl font-josefin text-3xl p-1 font-bold hover:ring-blue-800 hover:ring-2 hover:bg-blue-600"
                         id="btn-new">New</button>
-                    <button
+                    <!-- <button
                         class="bg-blue-400 rounded-2xl font-josefin text-3xl p-1 font-bold hover:ring-blue-800 hover:ring-2 hover:bg-blue-600"
-                        id="btn-upload">Upload</button>
+                        id="btn-upload">Upload</button> -->
+                    <input type="file" name="button" id="actualButton" hidden>
+                    <label for="actualButton"
+                        class="bg-blue-400 rounded-2xl font-josefin text-3xl p-1 font-bold hover:ring-blue-800 hover:ring-2 hover:bg-blue-600 text-center cursor-pointer"
+                        id="btn-upload">Upload</label>
                     <button
                         class="bg-blue-400 rounded-2xl font-josefin text-3xl p-1 font-bold hover:ring-blue-800 hover:ring-2 hover:bg-blue-600"
                         id="btn-share">Share</button>
