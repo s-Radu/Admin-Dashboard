@@ -26,7 +26,15 @@ function newProjectFunction() {
       <i class="fa-solid fa-code-fork text-2xl cursor-pointer"></i>
     </div>
   </div>`;
+
   projectWrapper.insertAdjacentHTML("beforeend", newProjectHTML);
+
+  //* Save the newly added projects to the local storage
+
+  let projects = localStorage.getItem("projects");
+  projects = projects ? JSON.parse(projects) : [];
+  projects.push({ title, description });
+  localStorage.setItem("projects", JSON.stringify(projects));
 }
 
 function shared() {
@@ -106,3 +114,27 @@ projectLike.forEach((project) => {
 shareBtn.addEventListener("click", shared);
 
 newProject.addEventListener("click", newProjectFunction);
+
+//> Keep the projects in the local storage
+
+window.onload = function () {
+  const projectWrapper = document.getElementById("project-wrapper");
+  let projects = localStorage.getItem("projects");
+  projects = projects ? JSON.parse(projects) : [];
+
+  projects.forEach((project) => {
+    const newProjectHTML = `<div class="rounded-2xl border-l-4 border-l-orange-400 bg-slate-600 flex flex-col justify-between">
+    <div>
+      <h2 class="font-montserat ml-2 text-4xl m-4">${project.title}</h2>
+      <p class="font-montserat ml-2 text-lg indent-2 m-4">${project.description}</p>
+    </div>
+    <div class="grid-cols-1 grid place-items-end grid-flow-col gap-4 m-4">
+      <i class="fa-regular fa-star text-2xl like cursor-pointer"></i>
+      <i class="fa-regular fa-eye text-2xl cursor-pointer"></i>
+      <i class="fa-solid fa-code-fork text-2xl cursor-pointer"></i>
+    </div>
+  </div>`;
+
+    projectWrapper.insertAdjacentHTML("beforeend", newProjectHTML);
+  });
+};
