@@ -1,0 +1,33 @@
+.animate {
+  opacity: 0;
+  transition: all 1s;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animate.active {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 2;
+}
+.slide-in-down {
+  transform: translateY(-100%) translateX(-50%);
+  z-index: 2;
+}
+.notification-button {
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  padding: 10px 20px;
+  background: #343a40;
+  color: #eeeeee;
+  border-radius: 10px;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.05);
+  z-index: -1;
+}
+
+.project:hover {
+  transition: all 0.5s ease-in-out;
+  scale: 1.03;
+  box-shadow: 0 0 10px white;
+}

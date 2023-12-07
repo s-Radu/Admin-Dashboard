@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" class=" dark">
+
+<head>
+    <meta name="description" content="An admin dashboard built in the learning trail for the Odin project by lil void">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Script, tailwindm logo  -->
+    <link rel="stylesheet" href="./src/output.css">
+    <script src="./src//app.js" defer></script>
+    <link rel="shortcut icon" href="./imgs/page-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="src/animation.css">
+
+    <!-- Font awesome icnons -->
+    <script src="https://kit.fontawesome.com/5b3d64bf20.js" crossorigin="anonymous" defer></script>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300&family=Montserrat:wght@100;200;300&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400&display=swap"
+        rel="stylesheet">
+
+    <title>Admin Sashboard</title>
+</head>
+
+<body class="dark:bg-gray-800 text-white h-screen" id="main">
+    <!--! Share button animation -->
+    <div class="animate slide-in-down notification-button font-nunito text-xl" id="shared-message">
+        <i class="fa fa-files-o"></i> Link Copied to Clipboard
+    </div>
+    <!--! container -->
+    <div class="container mx-auto rounded-2xl grid grid-cols-4 grid-rows-3 gap-8 h-full mt-2">
+
+        <!--! Nav bar -->
+        <nav class="rounded-2xl bg-blue-500 fixed h-full w-1/5">
+            <h1 class="text-4xl text-center m-5 font-josefin font-black">
+                <i class="fa-solid fa-grip rotate-90"></i>
+                Dashboard
+            </h1>
+            <ul class="grid grid-cols-1 w-3/4 mx-auto h-2/6 mt-8">
+                <li class="font-josefin text-3xl font-bold">
+                    <i class="fa-solid fa-house"></i>
+                    <a href="#home" class="hover:text-black m-2">Home</a>
+                </li>
+                <li class="font-josefin text-3xl font-bold">
+                    <i class="fa-solid fa-user"></i>
+                    <a href="#profile" class="hover:text-black m-2">Profile</a>
+                </li>
+                <li class="font-josefin text-3xl font-bold">
+                    <i class="fa-regular fa-comment-dots"></i>
+                    <a href="#message" class="hover:text-black m-2">Message</a>
+                </li>
+                <li class="font-josefin text-3xl font-bold">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <a href="#history" class="hover:text-black m-2">History</a>
+                </li>
+                <li class="font-josefin text-3xl font-bold">
+                    <i class="fa-solid fa-list-check"></i>
+                    <a href="#tasks" class="hover:text-black m-2">Tasks</a>
+                </li>
+                <li class="font-josefin text-3xl font-bold">
+                    <i class="fa-solid fa-users"></i>
+                    <a href="#communities" class="hover:text-black m-2">Communities</a>
+                </li>
+            </ul>
+            <ul class="grid grid-cols-1 w-3/4 mx-auto h-1/6 mt-8">
+                <li class="font-josefin text-3xl font-bold">
+                    <i class="fa-solid fa-gears"></i>
+                    <a href="#settings" class="hover:text-black m-2">Settings</a>
+                </li>
+                <li class="font-josefin text-3xl font-bold">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <a href="#support" class="hover:text-black m-2">Support</a>
+                </li>
+                <li class="font-josefin text-3xl font-bold">
+                    <i class="fa-solid fa-lock"></i>
+                    <a href="#privacy" class="hover:text-black m-2">Privacy</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!--! Header -->
+        <header class="col-start-2 grid-rows-2 col-span-3 grid items-start h-3/4 border-b">
+            <div class="grid grid-cols-2 m-2 content-center">
+                <form>
+                    <label for="text" id="search">
+                        <i class="fa-solid fa-magnifying-glass cursor-pointer text-2xl m-2"></i>
+                    </label>
+                    <input type="text"
+                        class="m-2 p-2 rounded-2xl font-josefin w-10/12 text-black indent-2 text-2xl active::ring-2 active:ring-purple-500"
+                        id="text">
+                </form>
+                <div class="grid grid-cols-3 justify-items-center content-center">
+                    <div>
+                        <i class="fa-regular fa-bell-slash cursor-pointer text-2xl" id="notifications"></i>
+                    </div>
+                    <div class="rounded-full overflow-hidden h-12 w-12">
+                        <img src="./imgs/logo.png" alt="Page logo?" class=" bg-center">
+                    </div>
+                    <div>
+                        <a href="#main">
+                            <h1 class="text-2xl font-josefin cursor-pointer">lil void</h1>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 m-2 content-center">
+                <div class="grid grid-cols-2 w-3/4 items-center justify-items-center">
+                    <div class="image-wrapper rounded-full overflow-hidden h-16 w-16">
+                        <img src="./imgs/logo.png" alt="Page Logo?" class="bg-center">
+                    </div>
+                    <div class="header-text justify-self-start">
+                        <p class="font-josefin text-xl text-white">
+                            Hi there,
+                        </p>
+                        <p class="font-josefin text-2xl">
+                            Radu T (@lil.void)
+                        </p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 content-center w-3/4 justify-self-end gap-6">
+                    <button
+                        class="bg-blue-400 rounded-2xl font-josefin text-2xl p-1 font-bold hover:ring-blue-800 hover:ring-2 hover:bg-blue-600"
+                        id="btn-new">New</button>
+                    <!-- <button
+                        class="bg-blue-400 rounded-2xl font-josefin text-3xl p-1 font-bold hover:ring-blue-800 hover:ring-2 hover:bg-blue-600"
+                        id="btn-upload">Upload</button> -->
+                    <input type="file" name="button" id="actualButton" hidden>
+                    <label for="actualButton"
+                        class="bg-blue-400 rounded-2xl font-josefin text-2xl p-1 font-bold hover:ring-blue-800 hover:ring-2 hover:bg-blue-600 text-center cursor-pointer"
+                        id="btn-upload">Upload</label>
+                    <button
+                        class="bg-blue-400 rounded-2xl font-josefin text-2xl p-1 font-bold hover:ring-blue-800 hover:ring-2 hover:bg-blue-600"
+                        id="btn-share">Share</button>
+                </div>
+            </div>
+        </header>
+
+        <!--! Main -->
+        <main class="col-start-2 w-full col-span-2 grid-rows-3 row-span-2 -mt-24">
+            <h1 class="font-josefin text-4xl">Your Projects</h1>
+            <div class="grid grid-cols-2 gap-10 mt-2 grid-flow-row h-5/6" id="project-wrapper">
+                <div
+                    class="project rounded-2xl border-l-4 border-l-orange-400 bg-slate-600 flex flex-col justify-between">
+                    <div>
+                        <h2 class="project-title font-montserat ml-2 text-4xl m-4">Super cool project</h2>
+                        <p class="project-description font-montserat ml-2 text-lg indent-2 m-4">Lorem ipsum dolor sit
+                            amet, consectetur
+                            adipisicing
+                            elit. Iusto, accusantium.</p>
+                    </div>
+                    <div class="grid-cols-1 grid place-items-end grid-flow-col gap-4 m-4">
+                        <i class="fa-regular fa-star text-2xl like cursor-pointer"></i>
+                        <i class="fa-regular fa-eye text-2xl cursor-pointer"></i>
+                        <i class="fa-solid fa-code-fork text-2xl cursor-pointer"></i>
+                    </div>
+                </div>
+                <div
+                    class="project rounded-2xl border-l-4 border-l-orange-400 bg-slate-600 flex flex-col justify-between">
+                    <div>
+                        <h2 class="project-title font-montserat ml-2 text-4xl m-4">Less cool project</h2>
+                        <p class="project-description font-montserat ml-2 text-lg indent-2 m-4">Lorem, ipsum dolor sit
+                            amet consectetur
+                            adipisicing elit. Officiis quam nulla maiores saepe dolor est..</p>
+                    </div>
+                    <div class="grid-cols-1 grid place-items-end grid-flow-col gap-4 m-4">
+                        <i class="fa-regular fa-star text-2xl like cursor-pointer"></i>
+                        <i class="fa-regular fa-eye text-2xl cursor-pointer"></i>
+                        <i class="fa-solid fa-code-fork text-2xl cursor-pointer"></i>
+                    </div>
+                </div>
+                <div
+                    class="project rounded-2xl border-l-4 border-l-orange-400 bg-slate-600 flex flex-col justify-between">
+                    <div>
+                        <h2 class="project-title font-montserat ml-2 text-4xl m-4">Somewhat decent project</h2>
+                        <p class="project-description font-montserat ml-2 text-lg indent-2 m-4">Lorem, ipsum dolor sit
+                            amet consectetur
+                            adipisicing elit. Neque ipsam obcaecati ullam error debitis quo iste.</p>
+                    </div>
+                    <div class="grid-cols-1 grid place-items-end grid-flow-col gap-4 m-4">
+                        <i class="fa-regular fa-star text-2xl like cursor-pointer"></i>
+                        <i class="fa-regular fa-eye text-2xl cursor-pointer"></i>
+                        <i class="fa-solid fa-code-fork text-2xl cursor-pointer"></i>
+                    </div>
+                </div>
+                <div
+                    class="project rounded-2xl border-l-4 border-l-orange-400 bg-slate-600 flex flex-col justify-between">
+                    <div>
+                        <h2 class="project-title font-montserat ml-2 text-4xl m-4">Notes project</h2>
+                        <p class="project-description font-montserat ml-2 text-lg indent-2 m-4">Lorem ipsum dolor sit
+                            amet consectetur
+                            adipisicing elit. At pariatur iure quo. Minima voluptatem quisquam odio nisi? Sequi,
+                            dignissimos!</p>
+                    </div>
+                    <div class="grid-cols-1 grid place-items-end grid-flow-col gap-4 m-4">
+                        <i class="fa-regular fa-star text-2xl like cursor-pointer"></i>
+                        <i class="fa-regular fa-eye text-2xl cursor-pointer"></i>
+                        <i class="fa-solid fa-code-fork text-2xl cursor-pointer"></i>
+                    </div>
+                </div>
+                <div
+                    class="project rounded-2xl border-l-4 border-l-orange-400 bg-slate-600 flex flex-col justify-between">
+                    <div>
+                        <h2 class="project-title font-montserat ml-2 text-4xl m-4">calculator project</h2>
+                        <p class="project-description font-montserat ml-2 text-lg indent-2 m-4">Lorem ipsum dolor, sit
+                            amet consectetur
+                            adipisicing elit. Nisi veniam similique repellendus eaque deserunt.</p>
+                    </div>
+                    <div class="grid-cols-1 grid place-items-end grid-flow-col gap-4 m-4">
+                        <i class="fa-regular fa-star text-2xl like cursor-pointer"></i>
+                        <i class="fa-regular fa-eye text-2xl cursor-pointer"></i>
+                        <i class="fa-solid fa-code-fork text-2xl cursor-pointer"></i>
+                    </div>
+                </div>
+                <div
+                    class="project rounded-2xl border-l-4 border-l-orange-400 bg-slate-600 flex flex-col justify-between">
+                    <div>
+                        <h2 class="project-title font-montserat ml-2 text-4xl m-4">simple app</h2>
+                        <p class="project-description font-montserat ml-2 text-lg indent-2 m-4">Lorem ipsum dolor sit
+                            amet consectetur
+                            adipisicing elit. Modi doloremque, doloribus rerum distinctio sint, quis assumenda, aliquid
+                            sapiente veniam pariatur expedita odio? Alias, tenetur?</p>
+                    </div>
+                    <div class="grid-cols-1 grid place-items-end grid-flow-col gap-4 m-4">
+                        <i class="fa-regular fa-star text-2xl like cursor-pointer"></i>
+                        <i class="fa-regular fa-eye text-2xl cursor-pointer"></i>
+                        <i class="fa-solid fa-code-fork text-2xl cursor-pointer"></i>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!--! Aside -->
+        <aside class="row-span-2 h-full flex flex-col gap-2 -mt-24">
+            <h1 class="font-josefin text-4xl">Announcements</h1>
+            <!--todo Aside item 1 -->
+            <div class=" bg-slate-600 rounded-2xl">
+                <div class="ml-2 mr-2 m-2 p-3">
+                    <h2 class="font-nunito text-2xl">Site maintenance</h2>
+                    <p class="font-montserrat text-sm border-b-2 pb-4 m-1 indent-2">Lorem, ipsum dolor sit amet
+                        consectetur
+                        adipisicing
+                        elit. Beatae
+                        impedit ad, sit aliquid blanditiis eum odio amet vero ratione ea.</p>
+                </div>
+                <div class="ml-2 mr-2 m-2 p-3">
+                    <h2 class="font-nunito text-2xl">Comunity Share Day</h2>
+                    <p class="font-montserrat text-sm border-b-2 pb-4 m-1 indent-2">Lorem, ipsum dolor sit amet
+                        consectetur
+                        adipisicing elit. Beatae
+                        impedit ad, sit aliquid blanditiis eum odio amet vero ratione ea.</p>
+                </div>
+                <div class="ml-2 mr-2 m-2 p-3">
+                    <h2 class="font-nunito text-2xl">Updated privacy policy</h2>
+                    <p class="font-montserrat text-sm pb-4 m-1 indent-2">Lorem, ipsum dolor sit amet
+                        consectetur
+                        adipisicing elit. Beatae
+                        impedit ad, sit aliquid blanditiis eum odio amet vero ratione ea.</p>
+                </div>
+            </div>
+            <!--todo Aside item 2 -->
+            <div class="flex flex-col mt-4 gap-2">
+                <h1 class="font-josefin text-4xl">Trending</h1>
+                <div class="bg-slate-600 rounded-2xl">
+                    <div class="ml-2 mr-2 m-2 flex border-b-2 gap-4 p-3">
+                        <div class="rounded-full overflow-hidden h-12 w-12">
+                            <img src="./imgs/logo.png" alt="Logo/">
+                        </div>
+                        <div>
+                            <h2 class="font-nunito text-2xl">@something</h2>
+                            <p class="font-montserrat pb-4 text-base indent-4 text-slate-300 ">Some random shit</p>
+                        </div>
+                    </div>
+                    <div class="ml-2 mr-2 m-2 flex border-b-2 gap-4 p-3">
+                        <div class="rounded-full overflow-hidden h-12 w-12">
+                            <img src="./imgs/logo.png" alt="Logo/">
+                        </div>
+                        <div>
+                            <h2 class="font-nunito text-2xl">@something</h2>
+                            <p class="font-montserrat pb-4 text-base indent-4 text-slate-300 ">Some random shit</p>
+                        </div>
+                    </div>
+                    <div class="ml-2 mr-2 m-2 flex border-b-2 gap-4 p-3">
+                        <div class="rounded-full overflow-hidden h-12 w-12">
+                            <img src="./imgs/logo.png" alt="Logo/">
+                        </div>
+                        <div>
+                            <h2 class="font-nunito text-2xl">@something</h2>
+                            <p class="font-montserrat pb-4 text-base indent-4 text-slate-300 ">Some random shit</p>
+                        </div>
+                    </div>
+                    <div class="ml-2 mr-2 m-2 flex gap-4 p-3">
+                        <div class="rounded-full overflow-hidden h-12 w-12">
+                            <img src="./imgs/logo.png" alt="Logo/">
+                        </div>
+                        <div>
+                            <h2 class="font-nunito text-2xl">@something</h2>
+                            <p class="font-montserrat pb-4 text-base indent-4 text-slate-300 ">Some random shit</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+</body>
+
+</html>
