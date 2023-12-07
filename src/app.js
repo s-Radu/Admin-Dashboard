@@ -11,7 +11,7 @@ const projectWrapper = document.getElementById("project-wrapper");
 //> functions
 
 function newProjectFunction() {
-  //TODO add check for null imputs
+  //TODO add check for null imputs -- Done
 
   const title = prompt("What's the project title?");
   const description = prompt("The project description?");
@@ -98,7 +98,7 @@ function shared() {
 }
 
 function notificationsBell() {
-  //todo resolve the conflict between two events
+  //todo resolve the conflict between two events -- deleted the other functions for hover / aka done
   if (notifications.classList.contains("fa-bell-slash")) {
     alert("notifications are on");
     notifications.classList.remove("fa-bell-slash");
@@ -160,7 +160,5 @@ projectWrapper.addEventListener("click", (e) => {
   if (project) {
     project.liked = !project.liked;
     localStorage.setItem("projects", JSON.stringify(projects));
-  } else {
-    console.error(`No project found with title: ${title}`);
   }
 });
