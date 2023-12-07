@@ -53,6 +53,17 @@ window.onload = function () {
   projects = projects ? JSON.parse(projects) : [];
   // Add the original projects to the projects array
 
+  const originalProjects = Array.from(
+    document.querySelectorAll(".project")
+  ).map((project) => {
+    const title = project.querySelector(".project-title").textContent;
+    const description = project.querySelector(
+      ".project-description"
+    ).textContent;
+    const liked = project.querySelector(".like").classList.contains("fa-solid");
+    return { title, description, liked };
+  });
+
   projects.forEach((project) => {
     const likeClass = project.liked ? "fa-solid" : "fa-regular";
     const newProjectHTML = `<div class="project rounded-2xl border-l-4 border-l-orange-400 bg-slate-600 flex flex-col justify-between">
@@ -69,6 +80,7 @@ window.onload = function () {
 
     projectWrapper.insertAdjacentHTML("beforeend", newProjectHTML);
   });
+  projects = [...projects, ...originalProjects];
 };
 
 function shared() {
@@ -98,20 +110,6 @@ function notificationsBell() {
   }
 }
 
-function mouseEnter(e) {
-  if (e.target.classList.contains("fa-bell-slash")) {
-    e.target.classList.add("fa-bell");
-    e.target.classList.remove("fa-bell-slash");
-  }
-}
-
-function mouseLeave(e) {
-  if (e.target.classList.contains("fa-bell")) {
-    e.target.classList.add("fa-bell-slash");
-    e.target.classList.remove("fa-bell");
-  }
-}
-
 function search(e) {
   console.log(searchInput.value);
   searchInput.value = "";
@@ -131,8 +129,6 @@ function likeAProjectAnimation(e) {
 //< events
 
 notifications.addEventListener("click", notificationsBell);
-notifications.addEventListener("mouseenter", mouseEnter);
-notifications.addEventListener("mouseleave", mouseLeave);
 
 searchBtn.addEventListener("click", search);
 searchInput.addEventListener("keydown", (e) => {
