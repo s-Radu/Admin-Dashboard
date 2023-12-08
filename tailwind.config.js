@@ -7,10 +7,10 @@ module.exports = {
   theme: {
     extend: {},
     textShadow: {
-      sm: "0 0  4px var(--tw-shadow-color)",
-      md: "0 0  8px var(--tw-shadow-color)",
-      lg: "0 0  12px var(--tw-shadow-color)",
-      xl: "0 0  16px var(--tw-shadow-color)",
+      sm: "-8px 0px 4px var(--tw-shadow-color)",
+      md: "-8px 0px 6px var(--tw-shadow-color)",
+      lg: "-8px -2px 10px var(--tw-shadow-color)",
+      xl: "-8px -4px 14px var(--tw-shadow-color)",
     },
     fontFamily: {
       josefin: ["Josefin Sans", "sans-serif"],
